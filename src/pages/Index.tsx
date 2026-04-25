@@ -53,12 +53,12 @@ function Navbar() {
             </div>
           </div>
           <div className="leading-tight">
-            <div className="font-display text-base sm:text-lg font-bold tracking-tight">
+            <div className="font-display text-base sm:text-lg font-bold tracking-tight uppercase">
               <span className="text-gradient-gold">VV Solar</span>{" "}
               <span className="text-foreground">Solutions</span>
             </div>
-            <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-primary/90 font-semibold -mt-0.5">
-              Powering Tomorrow, Today
+            <div className="text-[8px] sm:text-[10px] uppercase tracking-[0.16em] text-primary/90 font-semibold -mt-0.5">
+              Powering a Greener Planet · Smart Solar Savings
             </div>
           </div>
         </a>
