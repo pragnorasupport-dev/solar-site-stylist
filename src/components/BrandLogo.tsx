@@ -5,7 +5,10 @@ interface BrandLogoProps {
 
 /**
  * VV Solar Solutions brand mark.
- * Inline SVG — crisp at any size, themable, no asset request.
+ * Uses CSS variables so colors adapt to theme + hover.
+ * Override per-instance via inline style or parent class:
+ *   --logo-sun, --logo-panel, --logo-panel-line,
+ *   --logo-v1, --logo-v2, --logo-leaf
  */
 export const BrandLogo = ({ className, title = "VV Solar Solutions" }: BrandLogoProps) => (
   <svg
@@ -13,16 +16,16 @@ export const BrandLogo = ({ className, title = "VV Solar Solutions" }: BrandLogo
     xmlns="http://www.w3.org/2000/svg"
     role="img"
     aria-label={title}
-    className={className}
+    className={`brand-logo ${className ?? ""}`}
   >
     <title>{title}</title>
     {/* sun */}
-    <circle cx="16" cy="16" r="8" fill="#FBBF24" />
+    <circle cx="16" cy="16" r="8" fill="var(--logo-sun)" />
     {/* solar panel */}
-    <rect x="22" y="18" width="26" height="14" rx="2" fill="#0EA5E9" />
+    <rect x="22" y="18" width="26" height="14" rx="2" fill="var(--logo-panel)" />
     <path
       d="M22 22h26M22 26h26M30 18v32M38 18v32"
-      stroke="#1D4ED8"
+      stroke="var(--logo-panel-line)"
       strokeWidth="1.5"
       opacity="0.6"
     />
@@ -30,7 +33,7 @@ export const BrandLogo = ({ className, title = "VV Solar Solutions" }: BrandLogo
     <path
       d="M10 38l5 16 5-16"
       fill="none"
-      stroke="#22C55E"
+      stroke="var(--logo-v1)"
       strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -38,7 +41,7 @@ export const BrandLogo = ({ className, title = "VV Solar Solutions" }: BrandLogo
     <path
       d="M24 38l5 16 5-16"
       fill="none"
-      stroke="#3B82F6"
+      stroke="var(--logo-v2)"
       strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -47,14 +50,14 @@ export const BrandLogo = ({ className, title = "VV Solar Solutions" }: BrandLogo
     <path
       d="M14 46c4 0 7 2 9 5"
       fill="none"
-      stroke="#16A34A"
+      stroke="var(--logo-leaf)"
       strokeWidth="2"
       strokeLinecap="round"
     />
     <path
       d="M20 44c1.5 0 3 .5 4.5 1.5"
       fill="none"
-      stroke="#16A34A"
+      stroke="var(--logo-leaf)"
       strokeWidth="2"
       strokeLinecap="round"
     />
