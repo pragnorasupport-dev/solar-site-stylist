@@ -146,24 +146,24 @@ function Hero() {
 
 /* ───────────────────────── TRUST ───────────────────────── */
 const TRUST = [
-  { icon: Star, value: "4.8★", label: "Customer Rating" },
-  { icon: Zap, value: "500+", label: "Installations" },
-  { icon: Award, value: "5+ yrs", label: "Experience" },
-  { icon: ShieldCheck, value: "25 yr", label: "Panel Warranty" },
+  { icon: ShieldCheck, title: "MNRE & TGREDCO", sub: "Empanelled Vendor" },
+  { icon: Award, title: "Tier-1 Panels", sub: "Premium Brands Only" },
+  { icon: FileCheck2, title: "Subsidy Assistance", sub: "End-to-End Paperwork" },
+  { icon: Sparkles, title: "25-Year Warranty", sub: "Performance Guaranteed" },
 ];
 function TrustBar() {
   return (
     <section className="relative -mt-10 z-20">
       <div className="container-x">
         <div className="glass rounded-2xl px-4 sm:px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 shadow-elevated">
-          {TRUST.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex items-center gap-3 sm:gap-4">
-              <div className="h-11 w-11 rounded-xl bg-primary/15 text-primary flex items-center justify-center shrink-0">
+          {TRUST.map(({ icon: Icon, title, sub }) => (
+            <div key={title} className="flex items-center gap-3 sm:gap-4">
+              <div className="h-11 w-11 rounded-xl bg-gradient-gold text-primary-foreground flex items-center justify-center shrink-0 shadow-gold">
                 <Icon className="h-5 w-5" />
               </div>
-              <div>
-                <div className="font-display text-lg sm:text-xl font-bold">{value}</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">{label}</div>
+              <div className="min-w-0">
+                <div className="font-display text-sm sm:text-base font-bold leading-tight">{title}</div>
+                <div className="text-[11px] sm:text-xs text-muted-foreground leading-tight">{sub}</div>
               </div>
             </div>
           ))}
