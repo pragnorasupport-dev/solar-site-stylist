@@ -184,7 +184,7 @@ function Hero() {
               <a href={WHATSAPP} target="_blank" rel="noreferrer">
                 <WhatsAppIcon className="mr-2 h-5 w-5" />
                 WhatsApp Quote
-                <span className="ml-2 inline-flex h-2 w-2 rounded-full bg-white/90 ring-2 ring-white/40 animate-pulse" aria-hidden />
+                <span className="ml-2 inline-flex h-2 w-2 rounded-full bg-[#25D366] ring-2 ring-[#25D366]/30 animate-pulse group-hover:bg-white group-hover:ring-white/40" aria-hidden />
               </a>
             </Button>
           </div>
