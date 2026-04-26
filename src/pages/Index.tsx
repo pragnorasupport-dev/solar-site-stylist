@@ -505,8 +505,8 @@ function Footer() {
           <div className="flex items-center gap-3">
             <div className="relative shrink-0">
               <div className="absolute -inset-1 rounded-2xl bg-gradient-gold opacity-25 blur-md" />
-              <div className="relative rounded-xl bg-white p-1 ring-1 ring-primary/30 shadow-card">
-                <img src={logo} alt="VV Solar Solutions logo" className="h-11 w-11 object-contain" />
+              <div className="relative rounded-xl bg-white p-1.5 ring-1 ring-primary/30 shadow-card">
+                <BrandLogo className="h-9 w-9" />
               </div>
             </div>
             <div>
