@@ -532,26 +532,32 @@ function Contact() {
             </div>
           </div>
           <form onSubmit={onSubmit} className="rounded-3xl bg-background/40 border border-border shadow-elevated p-6 sm:p-8 space-y-4">
+            {/* FormSubmit.co configuration */}
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_autoresponse" value="Hi, thanks for reaching out to VV Solar Solutions! We've received your enquiry and our solar expert will call you within 24 hours with a personalised proposal. — Team VV Solar (+91 90638 00858)" />
+            <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" required placeholder="Your full name" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
+                <Input id="name" name="Name" required placeholder="Your full name" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
               </div>
               <div>
                 <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" required type="tel" placeholder="+91" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
+                <Input id="phone" name="Phone" required type="tel" placeholder="+91" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
               </div>
             </div>
             <div>
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="you@example.com" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
+              <Input id="email" name="Email" type="email" placeholder="you@example.com" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
             </div>
             <div>
               <Label htmlFor="msg">How can we help?</Label>
-              <Textarea id="msg" rows={4} placeholder="Tell us about your monthly bill and roof type…" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
+              <Textarea id="msg" name="Message" rows={4} placeholder="Tell us about your monthly bill and roof type…" className="mt-1.5 bg-background/40 border-border focus-visible:ring-primary" />
             </div>
-            <Button type="submit" variant="gold" size="lg" className="w-full">
-              Request free site survey <ArrowRight className="ml-2 h-4 w-4" />
+            <Button type="submit" variant="gold" size="lg" className="w-full" disabled={submitting}>
+              {submitting ? "Sending…" : (<>Request free site survey <ArrowRight className="ml-2 h-4 w-4" /></>)}
             </Button>
             <p className="text-xs text-muted-foreground text-center">We respect your privacy. No spam, ever.</p>
           </form>
