@@ -581,7 +581,7 @@ function SectionHeader({
   return (
     <div className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : ""}`}>
       <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-        <Sun className="h-3.5 w-3.5" /> {eyebrow}
+        <BrandLogo className="h-4 w-4" /> {eyebrow}
       </div>
       <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{title}</h2>
       {subtitle && <p className="mt-4 text-muted-foreground">{subtitle}</p>}
