@@ -53,8 +53,10 @@ function Navbar() {
             </div>
           </div>
           <div className="leading-tight">
-            <div className="font-display text-base sm:text-lg font-extrabold tracking-tight uppercase text-gradient-gold">
-              VV Solar Solutions
+            <div className="font-display text-base sm:text-lg font-extrabold tracking-tight uppercase flex items-baseline gap-1.5">
+              <span className="text-[#3b82f6]">VV</span>
+              <span className="text-gradient-gold">Solar</span>
+              <span className="text-foreground">Solutions</span>
             </div>
             <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium -mt-0.5">
               Powering a Greener Planet
