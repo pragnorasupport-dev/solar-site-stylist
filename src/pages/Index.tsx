@@ -487,10 +487,35 @@ function Testimonials() {
 
 /* ───────────────────────── CONTACT ───────────────────────── */
 function Contact() {
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [submitting, setSubmitting] = useState(false);
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thank you! We'll call you within 24 hours.");
-    (e.target as HTMLFormElement).reset();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    // Honeypot — silently drop bots
+    if ((fd.get("_honey") as string)?.length) return;
+
+    // Build a clean, business-formatted lead subject
+    const name = (fd.get("name") as string)?.trim() || "Unknown";
+    const phone = (fd.get("phone") as string)?.trim() || "—";
+    fd.set("_subject", `🌞 New Solar Lead — ${name} (${phone})`);
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@vvsolarsolutions.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: fd,
+      });
+      if (!res.ok) throw new Error("Network error");
+      toast.success("Thank you! Our solar expert will call you within 24 hours.");
+      form.reset();
+    } catch {
+      toast.error("Something went wrong. Please WhatsApp or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
   return (
     <section id="contact" className="section-pad bg-gradient-surface">
