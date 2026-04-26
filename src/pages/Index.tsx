@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
-  Sun, Phone, MessageCircle, ShieldCheck, Award, Zap, BatteryCharging,
+  Sun, Moon, Phone, MessageCircle, ShieldCheck, Award, Zap, BatteryCharging,
   Home as HomeIcon, Building2, Wrench, ArrowRight, CheckCircle2, Star,
   ClipboardList, FileCheck2, Sparkles, Menu, X, MapPin, Mail
 } from "lucide-react";
