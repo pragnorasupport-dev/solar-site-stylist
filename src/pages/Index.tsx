@@ -502,9 +502,13 @@ function Footer() {
       <div className="container-x grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="VV Solar" className="h-10 w-10 object-contain" />
+            <img src={logo} alt="VV Solar Solutions logo" className="h-10 w-10 object-contain rounded-lg bg-white p-0.5" />
             <div>
-              <div className="font-display font-bold">VV Solar Solutions</div>
+              <div className="font-display font-extrabold uppercase tracking-tight flex items-baseline gap-1.5 text-sm">
+                <span className="text-[#3b82f6]">VV</span>
+                <span className="text-gradient-gold">Solar</span>
+                <span className="text-foreground">Solutions</span>
+              </div>
               <div className="text-xs text-muted-foreground">Unit of Techno Sync Soft Solutions Pvt Ltd</div>
             </div>
           </div>
