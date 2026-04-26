@@ -46,18 +46,18 @@ function Navbar() {
     >
       <div className="container-x flex h-16 sm:h-20 items-center justify-between">
         <a href="#top" className="group flex items-center gap-3">
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-gradient-gold opacity-40 blur-md group-hover:opacity-70 transition-opacity" />
-            <div className="relative rounded-full bg-background/40 ring-1 ring-primary/40 p-1 backdrop-blur-sm">
-              <img src={logo} alt="VV Solar Solutions logo" className="h-9 w-9 sm:h-11 sm:w-11 object-contain" />
+          <div className="relative shrink-0">
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-gold opacity-30 blur-lg group-hover:opacity-60 transition-opacity" />
+            <div className="relative rounded-2xl bg-white p-1 ring-1 ring-primary/30 shadow-card">
+              <img src={logo} alt="VV Solar Solutions logo" className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
             </div>
           </div>
           <div className="leading-tight">
-            <div className="font-display text-base sm:text-lg font-bold tracking-tight uppercase text-gradient-gold">
+            <div className="font-display text-base sm:text-lg font-extrabold tracking-tight uppercase text-gradient-gold">
               VV Solar Solutions
             </div>
-            <div className="text-[8px] sm:text-[10px] uppercase tracking-[0.16em] text-primary/90 font-semibold -mt-0.5">
-              Powering a Greener Planet · Smart Solar Savings
+            <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium -mt-0.5">
+              Powering a Greener Planet
             </div>
           </div>
         </a>
