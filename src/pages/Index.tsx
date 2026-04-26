@@ -496,10 +496,24 @@ function Contact() {
     // Honeypot — silently drop bots
     if ((fd.get("_honey") as string)?.length) return;
 
-    // Build a clean, business-formatted lead subject
-    const name = (fd.get("name") as string)?.trim() || "Unknown";
-    const phone = (fd.get("phone") as string)?.trim() || "—";
-    fd.set("_subject", `🌞 New Solar Lead — ${name} (${phone})`);
+    // Read fields (note: input "name" attributes are capitalized to match FormSubmit table headers)
+    const name = (fd.get("Name") as string)?.trim() || "Unknown";
+    const phone = (fd.get("Phone") as string)?.trim() || "—";
+    const email = (fd.get("Email") as string)?.trim() || "—";
+    const message = (fd.get("Message") as string)?.trim() || "—";
+
+    // Lead metadata for sales team
+    const submittedAt = new Date().toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      dateStyle: "full",
+      timeStyle: "short",
+    });
+    fd.set("Submitted At (IST)", submittedAt);
+    fd.set("Source Page", typeof window !== "undefined" ? window.location.href : "website");
+
+    // Business-formatted email subject + reply-to so sales can reply directly to the lead
+    fd.set("_subject", `🌞 New Solar Lead — ${name} • ${phone}`);
+    if (email && email !== "—") fd.set("_replyto", email);
 
     setSubmitting(true);
     try {
