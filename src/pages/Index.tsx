@@ -53,8 +53,10 @@ function Navbar() {
             </div>
           </div>
           <div className="leading-tight">
-            <div className="font-display text-base sm:text-lg font-extrabold tracking-tight uppercase text-gradient-gold">
-              VV Solar Solutions
+            <div className="font-display text-base sm:text-lg font-extrabold tracking-tight uppercase flex items-baseline gap-1.5">
+              <span className="text-[#3b82f6]">VV</span>
+              <span className="text-gradient-gold">Solar</span>
+              <span className="text-foreground">Solutions</span>
             </div>
             <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium -mt-0.5">
               Powering a Greener Planet
@@ -410,13 +412,11 @@ function Testimonials() {
   return (
     <section className="section-pad">
       <div className="container-x">
-        <SectionHeader eyebrow="Customers love us" title={<>Trusted by <span className="text-gradient-gold">500+ families</span> & businesses.</>} />
+        <SectionHeader eyebrow="Customer stories" title={<>What our <span className="text-gradient-gold">customers say.</span></>} />
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {REVIEWS.map((r) => (
             <figure key={r.name} className="rounded-2xl border border-border bg-gradient-surface p-7 shadow-card flex flex-col">
-              <div className="flex gap-1 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
-              </div>
+              <div className="text-primary font-display text-3xl leading-none">"</div>
               <blockquote className="mt-4 text-foreground/90 leading-relaxed flex-1">"{r.quote}"</blockquote>
               <figcaption className="mt-6 pt-5 border-t border-border/60">
                 <div className="font-display font-semibold">{r.name}</div>
@@ -502,9 +502,13 @@ function Footer() {
       <div className="container-x grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="VV Solar" className="h-10 w-10 object-contain" />
+            <img src={logo} alt="VV Solar Solutions logo" className="h-10 w-10 object-contain rounded-lg bg-white p-0.5" />
             <div>
-              <div className="font-display font-bold">VV Solar Solutions</div>
+              <div className="font-display font-extrabold uppercase tracking-tight flex items-baseline gap-1.5 text-sm">
+                <span className="text-[#3b82f6]">VV</span>
+                <span className="text-gradient-gold">Solar</span>
+                <span className="text-foreground">Solutions</span>
+              </div>
               <div className="text-xs text-muted-foreground">Unit of Techno Sync Soft Solutions Pvt Ltd</div>
             </div>
           </div>
