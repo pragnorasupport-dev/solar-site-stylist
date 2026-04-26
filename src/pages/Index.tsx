@@ -53,13 +53,11 @@ function Navbar() {
             </div>
           </div>
           <div className="leading-tight">
-            <div className="font-display text-base sm:text-lg font-extrabold tracking-tight uppercase flex items-baseline gap-1.5">
-              <span className="text-[#3b82f6]">VV</span>
-              <span className="text-gradient-gold">Solar</span>
-              <span className="text-foreground">Solutions</span>
+            <div className="font-display text-base sm:text-lg font-extrabold tracking-tight uppercase whitespace-nowrap">
+              <span className="text-[#3b82f6]">VV</span><span className="text-gradient-gold">Solar</span><span className="text-foreground">Solutions</span>
             </div>
             <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium -mt-0.5">
-              Powering a Greener Planet
+              A Unit of Techno Sync Soft Solutions Pvt Ltd
             </div>
           </div>
         </a>
@@ -447,7 +445,7 @@ function Contact() {
             <div className="mt-8 space-y-5">
               <ContactRow icon={Phone} label="Call us" value="+91 90638 00858" href={`tel:${PHONE}`} />
               <ContactRow icon={MessageCircle} label="WhatsApp" value="Chat with us instantly" href={WHATSAPP} />
-              <ContactRow icon={Mail} label="Email" value="info@vvsolarsolutions.in" href="mailto:info@vvsolarsolutions.in" />
+              <ContactRow icon={Mail} label="Email" value="info@vvsolarsolutions.com" href="mailto:info@vvsolarsolutions.com" />
               <ContactRow icon={MapPin} label="Office" value="H.No 1-3-7/315, Chendrabella Vistas, RP Nilayam, Old Alwal, Medchal–Malkajgiri, Telangana 500010" />
             </div>
           </div>
@@ -504,12 +502,10 @@ function Footer() {
           <div className="flex items-center gap-3">
             <img src={logo} alt="VV Solar Solutions logo" className="h-10 w-10 object-contain rounded-lg bg-white p-0.5" />
             <div>
-              <div className="font-display font-extrabold uppercase tracking-tight flex items-baseline gap-1.5 text-sm">
-                <span className="text-[#3b82f6]">VV</span>
-                <span className="text-gradient-gold">Solar</span>
-                <span className="text-foreground">Solutions</span>
+              <div className="font-display font-extrabold uppercase tracking-tight text-sm whitespace-nowrap">
+                <span className="text-[#3b82f6]">VV</span><span className="text-gradient-gold">Solar</span><span className="text-foreground">Solutions</span>
               </div>
-              <div className="text-xs text-muted-foreground">Unit of Techno Sync Soft Solutions Pvt Ltd</div>
+              <div className="text-xs text-muted-foreground">A Unit of Techno Sync Soft Solutions Pvt Ltd</div>
             </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">Crafting a sustainable planet, inspired by the sun.</p>
