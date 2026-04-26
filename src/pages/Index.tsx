@@ -180,8 +180,12 @@ function Hero() {
             <Button asChild variant="gold" size="xl" className="animate-pulse-gold">
               <a href={`tel:${PHONE}`}><Phone className="mr-2 h-5 w-5" />Call Now</a>
             </Button>
-            <Button asChild variant="outlineGold" size="xl">
-              <a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle className="mr-2 h-5 w-5" />WhatsApp Quote</a>
+            <Button asChild variant="whatsapp" size="xl" className="group relative overflow-hidden">
+              <a href={WHATSAPP} target="_blank" rel="noreferrer">
+                <WhatsAppIcon className="mr-2 h-5 w-5" />
+                WhatsApp Quote
+                <span className="ml-2 inline-flex h-2 w-2 rounded-full bg-white/90 ring-2 ring-white/40 animate-pulse" aria-hidden />
+              </a>
             </Button>
           </div>
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
