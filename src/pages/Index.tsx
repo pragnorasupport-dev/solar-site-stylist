@@ -180,11 +180,11 @@ function Hero() {
             <Button asChild variant="gold" size="xl" className="animate-pulse-gold">
               <a href={`tel:${PHONE}`}><Phone className="mr-2 h-5 w-5" />Call Now</a>
             </Button>
-            <Button asChild variant="whatsapp" size="xl" className="group relative overflow-hidden">
+            <Button asChild variant="whatsappGlass" size="xl" className="group relative overflow-hidden">
               <a href={WHATSAPP} target="_blank" rel="noreferrer">
                 <WhatsAppIcon className="mr-2 h-5 w-5" />
                 WhatsApp Quote
-                <span className="ml-2 inline-flex h-2 w-2 rounded-full bg-white/90 ring-2 ring-white/40 animate-pulse" aria-hidden />
+                <span className="ml-2 inline-flex h-2 w-2 rounded-full bg-[#25D366] ring-2 ring-[#25D366]/30 animate-pulse group-hover:bg-white group-hover:ring-white/40" aria-hidden />
               </a>
             </Button>
           </div>
@@ -582,7 +582,7 @@ function Footer() {
           <p className="text-sm text-muted-foreground">MNRE • TGREDCO Empanelled Vendor</p>
           <div className="mt-4 flex gap-3">
             <Button asChild variant="gold" size="sm"><a href={`tel:${PHONE}`}><Phone className="mr-2 h-4 w-4" />Call</a></Button>
-            <Button asChild variant="whatsapp" size="sm"><a href={WHATSAPP} target="_blank" rel="noreferrer"><WhatsAppIcon className="mr-2 h-4 w-4" />WhatsApp</a></Button>
+            <Button asChild variant="whatsappGlass" size="sm"><a href={WHATSAPP} target="_blank" rel="noreferrer"><WhatsAppIcon className="mr-2 h-4 w-4" />WhatsApp</a></Button>
           </div>
         </div>
       </div>
@@ -643,7 +643,7 @@ function FloatingCTAs() {
           <Button asChild variant="gold" className="flex-1 h-12">
             <a href={`tel:${PHONE}`}><Phone className="mr-2 h-4 w-4" />Call Now</a>
           </Button>
-          <Button asChild variant="whatsapp" className="flex-1 h-12">
+          <Button asChild variant="whatsappGlass" className="flex-1 h-12">
             <a href={WHATSAPP} target="_blank" rel="noreferrer"><WhatsAppIcon className="mr-2 h-4 w-4" />WhatsApp</a>
           </Button>
         </div>
