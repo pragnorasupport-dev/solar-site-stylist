@@ -17,6 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         gold: "bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300",
         outlineGold: "border-2 border-primary/70 text-foreground bg-background/20 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300",
+        whatsapp: "bg-[#25D366] text-white font-semibold shadow-[0_10px_30px_-10px_rgba(37,211,102,0.65)] hover:bg-[#1ebe5a] hover:-translate-y-0.5 transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
