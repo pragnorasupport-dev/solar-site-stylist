@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
-  Sun, Phone, MessageCircle, ShieldCheck, Award, Zap, BatteryCharging,
+  Sun, Moon, Phone, MessageCircle, ShieldCheck, Award, Zap, BatteryCharging,
   Home as HomeIcon, Building2, Wrench, ArrowRight, CheckCircle2, Star,
   ClipboardList, FileCheck2, Sparkles, Menu, X, MapPin, Mail
 } from "lucide-react";
@@ -27,10 +27,27 @@ const NAV = [
   { label: "Contact", href: "#contact" },
 ];
 
+/* ───────────────────────── THEME HOOK ───────────────────────── */
+function useTheme() {
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "dark";
+    const stored = localStorage.getItem("vv-theme");
+    if (stored === "light" || stored === "dark") return stored;
+    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  });
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle("light", theme === "light");
+    localStorage.setItem("vv-theme", theme);
+  }, [theme]);
+  return { theme, toggle: () => setTheme((t) => (t === "light" ? "dark" : "light")) };
+}
+
 /* ───────────────────────── NAV ───────────────────────── */
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { theme, toggle } = useTheme();
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
@@ -38,10 +55,16 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isLight = theme === "light";
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/60 shadow-card" : "bg-transparent"
+        scrolled
+          ? isLight
+            ? "bg-background/75 backdrop-blur-md border-b border-border/70 shadow-card"
+            : "bg-background/85 backdrop-blur-xl border-b border-border/60 shadow-card"
+          : "bg-transparent"
       }`}
     >
       <div className="container-x flex h-16 sm:h-20 lg:h-24 items-center justify-between gap-3">
@@ -52,13 +75,19 @@ function Navbar() {
         >
           <div className="relative shrink-0">
             <div className="absolute -inset-1.5 rounded-2xl bg-gradient-gold opacity-25 blur-xl group-hover:opacity-60 transition-opacity duration-500" />
-            <div className="relative rounded-2xl bg-white p-1.5 sm:p-2 ring-1 ring-primary/40 shadow-elevated">
+            <div
+              className={`relative rounded-2xl p-1.5 sm:p-2 ring-1 shadow-elevated transition-colors duration-300 ${
+                isLight
+                  ? "bg-[hsl(215_60%_11%)] ring-primary/50"
+                  : "bg-white ring-primary/40"
+              }`}
+            >
               <BrandLogo className="h-8 w-8 sm:h-11 sm:w-11 lg:h-12 lg:w-12" />
             </div>
           </div>
           <div className="leading-tight min-w-0">
             <div className="font-display text-base sm:text-xl lg:text-2xl font-extrabold tracking-tight whitespace-nowrap flex items-baseline gap-1 sm:gap-1.5">
-              <span className="text-[#2563eb]">VV</span>
+              <span className={isLight ? "text-[#1d4ed8]" : "text-[#2563eb]"}>VV</span>
               <span className="text-gradient-gold">Solar</span>
               <span className="text-foreground hidden xs:inline sm:inline">Solutions</span>
             </div>
@@ -75,18 +104,34 @@ function Navbar() {
             </a>
           ))}
         </nav>
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2">
+          <button
+            onClick={toggle}
+            aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-surface/50 text-foreground/80 hover:text-primary hover:border-primary/60 transition-colors"
+          >
+            {isLight ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+          </button>
           <Button asChild variant="gold" size="sm">
             <a href={`tel:${PHONE}`}><Phone className="mr-2 h-4 w-4" />Call Now</a>
           </Button>
         </div>
-        <button
-          className="md:hidden p-2 text-foreground"
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-1">
+          <button
+            onClick={toggle}
+            aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
+            className="p-2 text-foreground/80 hover:text-primary transition-colors"
+          >
+            {isLight ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+          </button>
+          <button
+            className="p-2 text-foreground"
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl">
