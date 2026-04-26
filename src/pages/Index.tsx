@@ -503,12 +503,20 @@ function Footer() {
       <div className="container-x grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="VV Solar Solutions logo" className="h-10 w-10 object-contain rounded-lg bg-white p-0.5" />
-            <div>
-              <div className="font-display font-extrabold uppercase tracking-tight text-sm whitespace-nowrap">
-                <span className="text-[#3b82f6]">VV</span><span className="text-gradient-gold">Solar</span><span className="text-foreground">Solutions</span>
+            <div className="relative shrink-0">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-gold opacity-25 blur-md" />
+              <div className="relative rounded-xl bg-white p-1 ring-1 ring-primary/30 shadow-card">
+                <img src={logo} alt="VV Solar Solutions logo" className="h-11 w-11 object-contain" />
               </div>
-              <div className="text-xs text-muted-foreground">A Unit of Techno Sync Soft Solutions Pvt Ltd</div>
+            </div>
+            <div>
+              <div className="font-display font-extrabold tracking-tight text-base flex items-baseline gap-1.5">
+                <span className="text-[#2563eb]">VV</span>
+                <span className="text-gradient-gold">Solar</span>
+                <span className="text-foreground">Solutions</span>
+              </div>
+              <div className="mt-0.5 h-px w-full bg-gradient-to-r from-[#2563eb] via-primary to-transparent opacity-70" />
+              <div className="mt-1 text-xs text-muted-foreground">A Unit of Techno Sync Soft Solutions Pvt Ltd</div>
             </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">Crafting a sustainable planet, inspired by the sun.</p>
