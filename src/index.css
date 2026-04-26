@@ -100,6 +100,34 @@
   .animate-fade-up { animation: fadeUp 0.8s var(--ease-smooth) both; }
   .animate-float  { animation: float 4s ease-in-out infinite; }
   .animate-pulse-gold { animation: pulseGold 2.4s ease-in-out infinite; }
+
+  /* Brand logo theming — defaults map to design tokens, with graceful fallbacks. */
+  .brand-logo {
+    --logo-sun: hsl(var(--primary));
+    --logo-panel: hsl(217 91% 60%);
+    --logo-panel-line: hsl(224 76% 48%);
+    --logo-v1: hsl(142 71% 45%);
+    --logo-v2: hsl(217 91% 60%);
+    --logo-leaf: hsl(142 76% 36%);
+    transition: filter 0.4s var(--ease-smooth), transform 0.4s var(--ease-smooth);
+  }
+  .group:hover .brand-logo,
+  .brand-logo:hover {
+    --logo-sun: hsl(var(--primary-glow));
+    --logo-panel: hsl(217 95% 68%);
+    --logo-v2: hsl(var(--primary));
+    filter: drop-shadow(0 6px 16px hsl(var(--primary) / 0.45));
+    transform: translateY(-1px) scale(1.03);
+  }
+  .dark .brand-logo,
+  .brand-logo {
+    /* Already dark-first; explicit override hook for future light mode */
+  }
+  :root.light .brand-logo {
+    --logo-panel: hsl(217 91% 50%);
+    --logo-panel-line: hsl(224 76% 38%);
+    --logo-leaf: hsl(142 76% 30%);
+  }
 }
 
 @keyframes fadeUp {
