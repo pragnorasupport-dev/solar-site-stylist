@@ -44,22 +44,26 @@ function Navbar() {
         scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/60 shadow-card" : "bg-transparent"
       }`}
     >
-      <div className="container-x flex h-16 sm:h-20 items-center justify-between">
-        <a href="#top" className="group flex items-center gap-3 sm:gap-4">
+      <div className="container-x flex h-16 sm:h-20 lg:h-24 items-center justify-between gap-3">
+        <a
+          href="#top"
+          className="group flex items-center gap-2.5 sm:gap-3 lg:gap-4 min-w-0 flex-shrink"
+          aria-label="VV Solar Solutions — home"
+        >
           <div className="relative shrink-0">
             <div className="absolute -inset-1.5 rounded-2xl bg-gradient-gold opacity-25 blur-xl group-hover:opacity-60 transition-opacity duration-500" />
-            <div className="relative rounded-2xl bg-white p-2 ring-1 ring-primary/40 shadow-elevated">
-              <BrandLogo className="h-10 w-10 sm:h-12 sm:w-12" />
+            <div className="relative rounded-2xl bg-white p-1.5 sm:p-2 ring-1 ring-primary/40 shadow-elevated">
+              <BrandLogo className="h-8 w-8 sm:h-11 sm:w-11 lg:h-12 lg:w-12" />
             </div>
           </div>
-          <div className="leading-tight">
-            <div className="font-display text-lg sm:text-2xl font-extrabold tracking-tight whitespace-nowrap flex items-baseline gap-1.5">
+          <div className="leading-tight min-w-0">
+            <div className="font-display text-base sm:text-xl lg:text-2xl font-extrabold tracking-tight whitespace-nowrap flex items-baseline gap-1 sm:gap-1.5">
               <span className="text-[#2563eb]">VV</span>
               <span className="text-gradient-gold">Solar</span>
-              <span className="text-foreground">Solutions</span>
+              <span className="text-foreground hidden xs:inline sm:inline">Solutions</span>
             </div>
             <div className="mt-1 h-px w-full bg-gradient-to-r from-[#2563eb] via-primary to-transparent opacity-70" />
-            <div className="mt-1 text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium">
+            <div className="mt-1 hidden sm:block text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium truncate">
               A Unit of Techno Sync Soft Solutions Pvt Ltd
             </div>
           </div>
