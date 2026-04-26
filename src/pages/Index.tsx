@@ -86,13 +86,13 @@ function Navbar() {
             </div>
           </div>
           <div className="leading-tight min-w-0">
-            <div className="font-display text-base sm:text-xl lg:text-2xl font-extrabold tracking-tight whitespace-nowrap flex items-baseline gap-1 sm:gap-1.5">
+            <div className="font-display text-[15px] sm:text-xl lg:text-2xl font-extrabold tracking-tight whitespace-nowrap flex items-baseline gap-1 sm:gap-1.5">
               <span className={isLight ? "text-[#1d4ed8]" : "text-[#2563eb]"}>VV</span>
               <span className="text-gradient-gold">Solar</span>
-              <span className="text-foreground hidden xs:inline sm:inline">Solutions</span>
+              <span className="text-foreground">Solutions</span>
             </div>
             <div className="mt-1 h-px w-full bg-gradient-to-r from-[#2563eb] via-primary to-transparent opacity-70" />
-            <div className="mt-1 hidden sm:block text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium truncate">
+            <div className="mt-1 text-[8.5px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.18em] text-muted-foreground font-medium truncate">
               A Unit of Techno Sync Soft Solutions Pvt Ltd
             </div>
           </div>
