@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { BrandLogo } from "@/components/BrandLogo";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import hero from "@/assets/hero-solar.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
