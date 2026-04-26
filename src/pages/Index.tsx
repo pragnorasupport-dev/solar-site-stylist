@@ -610,19 +610,43 @@ function FooterCol({ title, links }: { title: string; links: [string, string][] 
 function FloatingCTAs() {
   return (
     <>
+      {/* Floating WhatsApp FAB with live status */}
       <a
         href={WHATSAPP}
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-40 h-14 w-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-elevated hover:scale-110 transition-transform animate-float"
+        aria-label="Chat on WhatsApp — typically replies in minutes"
+        className="group fixed bottom-24 right-4 sm:bottom-8 sm:right-6 z-40 flex items-center"
       >
-        <MessageCircle className="h-7 w-7" />
+        {/* hover tooltip */}
+        <span className="hidden sm:inline-flex mr-3 items-center gap-2 rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-medium text-foreground shadow-card border border-border/60 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#25D366] animate-pulse" />
+          We reply in minutes
+        </span>
+        <span className="relative flex h-14 w-14 items-center justify-center">
+          <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-60 animate-ping" />
+          <span className="relative h-14 w-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_12px_32px_-8px_rgba(37,211,102,0.7)] hover:scale-110 transition-transform">
+            <WhatsAppIcon className="h-7 w-7" />
+            <span className="absolute -top-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-[#25D366] ring-2 ring-background" />
+          </span>
+        </span>
       </a>
+
       {/* Sticky call bar (mobile only) */}
-      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border/60 bg-background/95 backdrop-blur-xl px-4 py-3 flex gap-2 safe-bottom">
-        <Button asChild variant="gold" className="flex-1"><a href={`tel:${PHONE}`}><Phone className="mr-2 h-4 w-4" />Call Now</a></Button>
-        <Button asChild variant="outlineGold" className="flex-1"><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle className="mr-2 h-4 w-4" />WhatsApp</a></Button>
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border/60 bg-background/95 backdrop-blur-xl px-3 pt-2 pb-3 safe-bottom">
+        <div className="absolute -top-px inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+        <div className="flex items-center justify-center gap-1.5 mb-1.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-semibold">
+          <span className="h-1 w-1 rounded-full bg-[#25D366] animate-pulse" />
+          Talk to a solar expert now
+        </div>
+        <div className="flex gap-2">
+          <Button asChild variant="gold" className="flex-1 h-12">
+            <a href={`tel:${PHONE}`}><Phone className="mr-2 h-4 w-4" />Call Now</a>
+          </Button>
+          <Button asChild variant="whatsapp" className="flex-1 h-12">
+            <a href={WHATSAPP} target="_blank" rel="noreferrer"><WhatsAppIcon className="mr-2 h-4 w-4" />WhatsApp</a>
+          </Button>
+        </div>
       </div>
     </>
   );
