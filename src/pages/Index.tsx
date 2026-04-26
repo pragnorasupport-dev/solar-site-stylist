@@ -582,7 +582,7 @@ function Footer() {
           <p className="text-sm text-muted-foreground">MNRE • TGREDCO Empanelled Vendor</p>
           <div className="mt-4 flex gap-3">
             <Button asChild variant="gold" size="sm"><a href={`tel:${PHONE}`}><Phone className="mr-2 h-4 w-4" />Call</a></Button>
-            <Button asChild variant="outlineGold" size="sm"><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle className="mr-2 h-4 w-4" />WhatsApp</a></Button>
+            <Button asChild variant="whatsapp" size="sm"><a href={WHATSAPP} target="_blank" rel="noreferrer"><WhatsAppIcon className="mr-2 h-4 w-4" />WhatsApp</a></Button>
           </div>
         </div>
       </div>
