@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import logo from "@/assets/vv-solar-logo.png";
+import { BrandLogo } from "@/components/BrandLogo";
 import hero from "@/assets/hero-solar.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
@@ -48,8 +48,8 @@ function Navbar() {
         <a href="#top" className="group flex items-center gap-3 sm:gap-4">
           <div className="relative shrink-0">
             <div className="absolute -inset-1.5 rounded-2xl bg-gradient-gold opacity-25 blur-xl group-hover:opacity-60 transition-opacity duration-500" />
-            <div className="relative rounded-2xl bg-white p-1.5 ring-1 ring-primary/40 shadow-elevated">
-              <img src={logo} alt="VV Solar Solutions logo" className="h-11 w-11 sm:h-14 sm:w-14 object-contain" />
+            <div className="relative rounded-2xl bg-white p-2 ring-1 ring-primary/40 shadow-elevated">
+              <BrandLogo className="h-10 w-10 sm:h-12 sm:w-12" />
             </div>
           </div>
           <div className="leading-tight">
